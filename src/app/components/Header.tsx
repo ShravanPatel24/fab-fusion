@@ -10,10 +10,10 @@ const Header = () => {
         </Link>
         <ul className="flex space-x-4">
           <li>
-            <Link href="/about">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/contact">About</Link>
+            <Link href="/about">About</Link>
           </li>
           <li>
             <Link href="#sign-up">Sign Up</Link>
