@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import Header from "./Header";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +40,7 @@ const HomePage = () => {
                   Explore our collection of custom t-shirts.
                 </p>
                 <Link
-                  href="/categories/t-shirts"
+                  href="/categories/tshirts"
                   className="text-blue-500 hover:underline mt-2"
                 >
                   View All T-Shirts
@@ -156,6 +157,7 @@ const HomePage = () => {
           <p className="text-xs uppercase mb-32">we return money 30 days</p>
         </div>
       </section>
+      <div></div>
       <Footer />
     </main>
   );

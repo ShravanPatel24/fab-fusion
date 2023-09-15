@@ -4,6 +4,7 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { UserButton } from "@clerk/nextjs";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -105,6 +106,7 @@ const ContactForm = () => {
           Submit
         </button>
       </form>
+      <UserButton afterSignOutUrl="/contact" />
     </div>
   );
 };

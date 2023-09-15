@@ -9,5 +9,4 @@ const userSchema = new mongoose.Schema({
   orders: [{ type: mongoose.Schema.Types.ObjectId, ref: "Order" }],
 });
 
-export const User =
-  mongoose.models.userSchema || mongoose.model("user", userSchema);
+export default mongoose.models.User || mongoose.model("User", userSchema);
