@@ -11,19 +11,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <h2 className="text-xl font-semibold mb-4">Fab Fusion</h2>
-            <p className="text-sm">Crate Your Own Design On Your Fav Ones.</p>
+            <p className="text-sm">Be More Stylish 😉</p>
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
             <ul className="text-sm">
               <li>
-                <Link href="/">Privacy Policy</Link>
+                <Link href="/privacy">Privacy Policy</Link>
               </li>
               <li>
                 <Link href="/about">About</Link>
               </li>
               <li>
-                <Link href="/services">Services</Link>
+                <Link href="/terms">Terms</Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>
@@ -35,8 +35,7 @@ const Footer = () => {
             <ul className="text-sm">
               <li className="flex items-center mb-2">
                 <FaMapMarkerAlt className="text-gray-400 mr-2" size={20} />
-                123 Main Street, Swaroopganj, Sirohi, Rajasthan, 307023,
-                Bharat
+                123 Main Street, Swaroopganj, Sirohi, Rajasthan, 307023, Bharat
               </li>
               <li className="flex items-center mb-2">
                 <FaEnvelope className="text-gray-400 mr-2" size={16} />

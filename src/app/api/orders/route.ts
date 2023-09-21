@@ -1,5 +1,5 @@
 import Order from "@/utils/model/Order";
-import connect from "../../../utils/connections/db";
+import connect from "@/utils/connections/db";
 import { NextResponse } from "next/server";
 
 export const GET = async (request) => {
