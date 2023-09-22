@@ -35,7 +35,6 @@ function Hoodies() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <div className="container mx-auto py-8 flex-grow">
         <h1 className="text-3xl font-semibold mb-4">Hoodies Collection</h1>
 
@@ -74,7 +73,6 @@ function Hoodies() {
           </div>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

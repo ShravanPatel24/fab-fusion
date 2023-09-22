@@ -4,7 +4,6 @@ import Header from "../components/Header";
 export default function TermsPage() {
   return (
     <div>
-      <Header />
       <div className="min-h-screen bg-gray-100">
         <Head>
           <title>Terms and Conditions</title>

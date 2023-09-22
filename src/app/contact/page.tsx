@@ -32,7 +32,6 @@ const ContactForm = () => {
 
   return (
     <div>
-      <Header />
       <div className="max-w-md mx-auto mt-16">
         <h1 className="text-2xl font-semibold text-center mb-4">Contact Us</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -108,7 +107,7 @@ const ContactForm = () => {
           {isSignedIn ? (
             <button
               type="submit"
-              className="bg-red-500 text-white font-semibold px-4 py-2 rounded hover:bg-red-600 transition duration-300"
+              className="bg-red-500 text-white font-semibold px-4 py-2 rounded hover:bg-red-600 transition duration-300 mb-12"
             >
               Submit
             </button>

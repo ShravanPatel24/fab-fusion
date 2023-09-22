@@ -8,7 +8,6 @@ import React from "react";
 const Dashboard = () => {
   return (
     <main>
-      <Header />
       <section className="mt-16">
         <div className="container mx-auto max-custom">
           <div className="flex items-center">
@@ -160,7 +159,6 @@ const Dashboard = () => {
           <p className="text-xs uppercase mb-32">we return money 30 days</p>
         </div>
       </section>
-      <Footer />
     </main>
   );
 };

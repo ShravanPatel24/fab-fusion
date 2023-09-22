@@ -1,7 +1,10 @@
+/* eslint-disable react/no-children-prop */
+
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { HeaderFooter } from "./components/HeaderFooter";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -31,7 +34,9 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <HeaderFooter children={children} />
+        </body>
       </html>
     </ClerkProvider>
   );

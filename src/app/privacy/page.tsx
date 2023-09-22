@@ -4,7 +4,6 @@ import Header from "../components/Header";
 export default function PrivacyPage() {
   return (
     <div>
-      <Header />
       <div className="min-h-screen bg-gray-100">
         <Head>
           <title>Privacy Policy</title>

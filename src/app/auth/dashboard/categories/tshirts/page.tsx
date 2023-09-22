@@ -35,7 +35,6 @@ function Jackets() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <div className="container mx-auto py-8 flex-grow ">
         <h1 className="text-3xl font-semibold mb-4">Tshirts Collection</h1>
 
@@ -74,7 +73,6 @@ function Jackets() {
           </div>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

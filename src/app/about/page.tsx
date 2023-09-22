@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 const AboutSection = () => {
   return (
     <div>
-      <Header />
       <section className="bg-light py-5">
         <div className="container mx-auto">
           {" "}
