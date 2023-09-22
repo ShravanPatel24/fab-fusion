@@ -5,7 +5,6 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useUser } from "@clerk/nextjs";
-import Header from "../components/Header";
 import Link from "next/link";
 
 const schema = yup.object().shape({

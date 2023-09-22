@@ -1,7 +1,5 @@
 "use client";
 
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
 import ProductLoader from "@/app/components/ProductLoader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";

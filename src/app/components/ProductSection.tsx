@@ -46,6 +46,9 @@ function ProductSection({ title }) {
             <ProductLoader />
             <ProductLoader />
             <ProductLoader />
+            <ProductLoader />
+            <ProductLoader />
+            <ProductLoader />
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
