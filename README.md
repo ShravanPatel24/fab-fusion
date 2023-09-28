@@ -1,6 +1,6 @@
 # FabFusion - Your Ultimate Fashion Destination
 
-![FabFusion Logo](https://images2.imgbox.com/b0/dd/gk5dxw8V_o.png)
+![FabFusion Logo](https://fab-fusion.vercel.app/logo.png)
 
 FabFusion is an e-commerce platform designed to provide an unparalleled shopping experience for fashion enthusiasts. With a wide range of clothing, accessories, and brands, FabFusion brings the latest fashion trends right to your fingertips.
 
