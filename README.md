@@ -1,6 +1,6 @@
 # FabFusion - Your Ultimate Fashion Destination
 
-![FabFusion Logo](https://ibb.co/BPcCdT9)
+![FabFusion Logo](https://yourimageshare.com/ib/oZtwN656yi)
 
 FabFusion is an e-commerce platform designed to provide an unparalleled shopping experience for fashion enthusiasts. With a wide range of clothing, accessories, and brands, FabFusion brings the latest fashion trends right to your fingertips.
 
