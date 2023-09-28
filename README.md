@@ -4,7 +4,7 @@
 
 FabFusion is an e-commerce platform designed to provide an unparalleled shopping experience for fashion enthusiasts. With a wide range of clothing, accessories, and brands, FabFusion brings the latest fashion trends right to your fingertips.
 
-## Features
+# Features
 
 - **Product Categories**: Browse through a variety of categories, including t-shirts, hoodies, jackets, and more, to find your perfect style.
 
@@ -18,16 +18,16 @@ FabFusion is an e-commerce platform designed to provide an unparalleled shopping
 
 - **Responsive Design**: Enjoy a seamless shopping experience on both desktop and mobile devices.
 
-## Getting Started
+# Getting Started
 
 These instructions will help you set up and run FabFusion on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
 - Node.js and npm installed on your computer
 - MongoDB database (you can use a local or cloud-based MongoDB instance)
 
-### Installation
+## Installation
 
 1. Clone this repository to your local machine:
 
@@ -50,21 +50,21 @@ These instructions will help you set up and run FabFusion on your local machine 
    5. NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=your-public-clerk-after-sign-in-url
    6. NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=your-public-clerk-after-sign-up-url
    7. MONGODB_URI= your-mongodb-uri
-      for more information visit : "https://clerk.com/"
+### For more information visit : "https://clerk.com/docs/quickstarts/nextjs?utm_source=www.google.com&utm_medium=referral&utm_campaign=none"
 
 5. Start the development server:
    npm run dev || yarn dev || pnpm dev
 
 6. Open your web browser and access FabFusion at http://localhost:3000.
 
-### Usage
+## Usage
 
 1. Browse through product categories by clicking on the menu.
 2. Click on a product to view detailed information.
 3. Add products to your cart and proceed to checkout when ready.
 4. Leave reviews for products you've purchased to help others.
 
-### Contributing
+## Contributing
 
 We welcome contributions from the open-source community! If you'd like to contribute to FabFusion, please follow these steps:
 
@@ -83,7 +83,7 @@ We welcome contributions from the open-source community! If you'd like to contri
 
 6. Your pull request will be reviewed, and once approved, your changes will be merged into the main project.
 
-### Acknowledgments
+## Acknowledgments
 
 Thanks to the open-source community for their contributions and support.
 
