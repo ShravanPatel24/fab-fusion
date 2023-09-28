@@ -50,7 +50,7 @@ These instructions will help you set up and run FabFusion on your local machine 
    5. NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=your-public-clerk-after-sign-in-url
    6. NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=your-public-clerk-after-sign-up-url
    7. MONGODB_URI= your-mongodb-uri
-### For more information visit : "https://clerk.com/"
+### For more information visit : "https://clerk.com/](https://clerk.com/docs/quickstarts/nextjs?utm_source=www.google.com&utm_medium=referral&utm_campaign=none"
 
 5. Start the development server:
    npm run dev || yarn dev || pnpm dev
