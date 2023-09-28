@@ -42,14 +42,15 @@ These instructions will help you set up and run FabFusion on your local machine 
    npm install || yarn || pnpm install
 
 4. Create a .env file in the root directory and configure your environment variables, including MongoDB connection details and any secret keys.
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
-   CLERK_SECRET_KEY=your-clerk-secret-key
-   NEXT_PUBLIC_CLERK_SIGN_IN_URL=your-public-clerk-sign-in-url
-   NEXT_PUBLIC_CLERK_SIGN_UP_URL=your-public-clerk-sign-up-url
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=your-public-clerk-after-sign-in-url
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=your-public-clerk-after-sign-up-url
-   for more information visit : "https://clerk.com/"
-   MONGODB_URI= your-mongodb-uri
+
+   1. NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+   2. CLERK_SECRET_KEY=your-clerk-secret-key
+   3. NEXT_PUBLIC_CLERK_SIGN_IN_URL=your-public-clerk-sign-in-url
+   4. NEXT_PUBLIC_CLERK_SIGN_UP_URL=your-public-clerk-sign-up-url
+   5. NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=your-public-clerk-after-sign-in-url
+   6. NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=your-public-clerk-after-sign-up-url
+   7. MONGODB_URI= your-mongodb-uri
+      for more information visit : "https://clerk.com/"
 
 5. Start the development server:
    npm run dev || yarn dev || pnpm dev
@@ -58,10 +59,10 @@ These instructions will help you set up and run FabFusion on your local machine 
 
 ### Usage
 
-Browse through product categories by clicking on the menu.
-Click on a product to view detailed information.
-Add products to your cart and proceed to checkout when ready.
-Leave reviews for products you've purchased to help others.
+1. Browse through product categories by clicking on the menu.
+2. Click on a product to view detailed information.
+3. Add products to your cart and proceed to checkout when ready.
+4. Leave reviews for products you've purchased to help others.
 
 ### Contributing
 
