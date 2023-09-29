@@ -48,7 +48,8 @@ function Tshirts() {
 
     const productToAdd: CartItem = {
       id: item._id,
-      productName: item.productName, // Use the appropriate field for the product name
+      brand: item.brand,
+      productName: item.productName,
       price: item.price,
       quantity: 1,
       user: "",

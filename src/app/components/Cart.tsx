@@ -1,16 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../CartContext";
-import { clerkClient, useSession } from "@clerk/nextjs";
 
 const Cart = ({ cartItems }) => {
   const { cart, removeFromCart, updateCartItemQuantity } = useCart();
-  const [isLoading, setIsLoading] = useState(true); // Loading state
-  const [cartData, setCartData] = useState([]);
-  const { session } = useSession();
 
   // Calculate cart total
   const cartTotal = cart.reduce((total, item) => {
@@ -44,6 +39,7 @@ const Cart = ({ cartItems }) => {
         <thead>
           <tr>
             <th className="py-2">Product</th>
+            <th className="py-2">Brand</th>
             <th className="py-2">Price</th>
             <th className="py-2">Quantity</th>
             <th className="py-2">Subtotal</th>
@@ -53,6 +49,7 @@ const Cart = ({ cartItems }) => {
           {cart.map((item) => (
             <tr key={item.id}>
               <td className="py-2 text-center">{item.productName}</td>
+              <td className="py-2 text-center">{item.brand}</td>
               <td className="py-2 text-center">₹{item.price}</td>
               <td className="py-2 text-center">
                 <div className="flex items-center justify-center">
@@ -103,7 +100,6 @@ const Cart = ({ cartItems }) => {
                   </button>
                 </div>
               </td>
-
               <td className="py-2 text-center">
                 ₹{item.price * item.quantity}
               </td>

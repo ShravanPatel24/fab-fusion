@@ -1,10 +1,12 @@
 "use client";
 
+import { CartItem, useCart } from "@/app/CartContext";
 import ProductLoader from "@/app/components/ProductLoader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 interface Posts {
+  productName: string;
   _id: string;
   name: string;
   description: string;
@@ -17,6 +19,10 @@ interface Posts {
 function Jackets() {
   const [posts, setPosts] = useState<Posts[]>([]);
   const [isLoading, setIsLoading] = useState(true); // Initialize as loading
+  const { addToCart } = useCart();
+  const [addedToCart, setAddedToCart] = useState<{
+    [productId: string]: boolean;
+  }>({});
 
   useEffect(() => {
     fetch("/api/products/jackets")
@@ -30,6 +36,31 @@ function Jackets() {
         setIsLoading(false); // Set loading to false on error as well
       });
   }, []);
+
+  const handleAddToCart = (item: Posts) => {
+    // Create a copy of the addedToCart state to avoid directly mutating it
+    const updatedAddedToCart = { ...addedToCart };
+
+    // Mark the product as added to the cart
+    updatedAddedToCart[item._id] = true;
+
+    // Update the state
+    setAddedToCart(updatedAddedToCart);
+
+    const productToAdd: CartItem = {
+      id: item._id,
+      productName: item.productName,
+      price: item.price,
+      quantity: 1,
+      user: "",
+      cartItems: [],
+      totalPrice: 0,
+      cartStatus: "",
+      brand: item.brand,
+    };
+
+    addToCart(productToAdd);
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -63,9 +94,18 @@ function Jackets() {
                 <p className="text-blue-600 font-semibold mt-2">
                   ₹{post.price}
                 </p>
-                <button className="bg-blue-500 text-white rounded-full px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300">
-                  Add to Cart
-                </button>
+                {addedToCart[post._id] ? (
+                  <button className="bg-green-500 text-white rounded-full px-4 py-2 mt-2">
+                    Added to Cart
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleAddToCart(post)}
+                    className="bg-blue-500 text-white rounded-full px-4 py-2 mt-2 hover:bg-blue-600 transition duration-300"
+                  >
+                    Add to Cart
+                  </button>
+                )}
               </div>
             ))}
           </div>

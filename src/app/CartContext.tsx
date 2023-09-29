@@ -10,6 +10,7 @@ import React, {
 
 // Define a type for your cart item to match your Mongoose schema
 export type CartItem = {
+  brand: string;
   id: string;
   productName: string;
   price: number;

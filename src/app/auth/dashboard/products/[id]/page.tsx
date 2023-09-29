@@ -6,25 +6,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa"; // Import cart icon from a library like react-icons
 import ProductLoader from "@/app/components/ProductLoader";
+import { CartItem, useCart } from "@/app/CartContext";
 
-interface ProductDetailsType {
+interface Posts {
+  productName: string;
+  _id: string;
   name: string;
   description: string;
   price: number;
   images: string[];
+  brand: string;
+  color: string;
 }
 
 const ProductDetails = ({ params }) => {
-  const [productDetails, setProductDetails] =
-    useState<ProductDetailsType | null>(null);
+  const [posts, setPosts] = useState<Posts | null>(null);
   const [loading, setLoading] = useState(false);
+  const { addToCart } = useCart();
+  const [addedToCart, setAddedToCart] = useState<{
+    [productId: string]: boolean;
+  }>({});
 
   const fetchProductDetails = async () => {
     setLoading(true);
     try {
       const result = await fetch(`/api/products/id?id=${params.id}`);
       const productData = await result.json();
-      setProductDetails(productData);
+      setPosts(productData);
     } catch (error) {
       console.error(error);
     }
@@ -34,6 +42,31 @@ const ProductDetails = ({ params }) => {
   useEffect(() => {
     fetchProductDetails();
   }, [params.id]);
+
+  const handleAddToCart = (item: Posts) => {
+    // Create a copy of the addedToCart state to avoid directly mutating it
+    const updatedAddedToCart = { ...addedToCart };
+
+    // Mark the product as added to the cart
+    updatedAddedToCart[item._id] = true;
+
+    // Update the state
+    setAddedToCart(updatedAddedToCart);
+
+    const productToAdd: CartItem = {
+      id: item._id,
+      productName: item.productName,
+      price: item.price,
+      quantity: 1,
+      user: "",
+      cartItems: [],
+      totalPrice: 0,
+      cartStatus: "",
+      brand: item.brand,
+    };
+
+    addToCart(productToAdd);
+  };
 
   return (
     <div className="container mx-auto p-4 flex items-center justify-center h-screen">
@@ -45,14 +78,13 @@ const ProductDetails = ({ params }) => {
         </div>
       ) : (
         <>
-          {productDetails ? (
+          {posts ? (
             <div className="w-full max-w-md p-4 bg-white rounded shadow-lg">
               <div className="mb-4">
                 {/* Render product images */}
-                {productDetails.images &&
-                Array.isArray(productDetails.images) ? (
+                {posts.images && Array.isArray(posts.images) ? (
                   <div className="flex justify-center">
-                    {productDetails.images.map((imageUrl, index) => (
+                    {posts.images.map((imageUrl, index) => (
                       <div
                         key={index}
                         className="w-32 h-42 p-1 border rounded-lg m-2"
@@ -70,21 +102,34 @@ const ProductDetails = ({ params }) => {
                   <p>No images available</p>
                 )}
               </div>
-              <h2 className="text-xl font-semibold mb-2">
-                {productDetails.name}
-              </h2>
-              <p className="text-gray-700 mb-2">{productDetails.description}</p>
+              <h2 className="text-xl font-semibold mb-2">{posts.name}</h2>
+              <p className="text-gray-700 mb-2">{posts.description}</p>
               <p className="text-blue-600 font-semibold">
-                Price: ₹{productDetails.price}
+                Price: ₹{posts.price}
               </p>
-              <button
-                className="bg-blue-500 text-white rounded-full px-4 py-2 mt-4 hover:bg-blue-600 transition duration-300 flex items-center"
-                onClick={() => {
-                  // Handle adding to cart here
-                }}
-              >
-                <FaShoppingCart className="mr-2" /> Add to Cart
-              </button>
+              {addedToCart[posts._id] ? (
+                <>
+                  <button
+                    disabled
+                    className="bg-green-500 text-white rounded-full px-4 py-2 mt-2"
+                  >
+                    Added to Cart
+                  </button>
+                  <Link href="/auth/dashboard/cart">
+                    <button className="bg-blue-500 text-white rounded-full px-4 py-2 mt-2">
+                      Go to cart
+                    </button>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  className="bg-blue-500 text-white rounded-full px-4 py-2 mt-4 hover:bg-blue-600 transition duration-300 flex items-center"
+                  onClick={() => handleAddToCart(posts)}
+                >
+                  <FaShoppingCart className="mr-2" /> Add to Cart
+                </button>
+              )}
+
               <Link
                 href="/auth/dashboard/"
                 className="block text-blue-500 hover:text-blue-600 mt-4"
