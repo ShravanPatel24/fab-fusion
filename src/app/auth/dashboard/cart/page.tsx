@@ -1,28 +1,19 @@
-import React from "react";
-import Cart from "../../../components/Cart";
+"use client";
 
-const page = () => {
-  const sampleCartItems = [
-    {
-      id: 1,
-      productName: "Product 1",
-      price: 200,
-      quantity: 2,
-    },
-    {
-      id: 2,
-      productName: "Product 2",
-      price: 300,
-      quantity: 1,
-    },
-    // Add more items as needed
-  ];
+import React from "react";
+import Cart from "@/app/components/Cart";
+import { useCart } from "@/app/CartContext";
+
+const Page = () => {
+  const { cart } = useCart(); // Get cart items from context
+
+  console.log("cart", cart);
 
   return (
     <div>
-      <Cart cartItems={sampleCartItems} />
+      <Cart cartItems={cart} />
     </div>
   );
 };
 
-export default page;
+export default Page;
