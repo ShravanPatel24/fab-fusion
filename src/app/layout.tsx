@@ -9,7 +9,7 @@ import { CartProvider } from "./CartContext";
 
 const inter = Poppins({
   subsets: ["latin"],
-  weight: "300",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className} style={{ fontSize: "18px" }}>
           <CartProvider>
             <HeaderFooter children={children} />
           </CartProvider>

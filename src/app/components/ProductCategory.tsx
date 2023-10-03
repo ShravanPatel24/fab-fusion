@@ -19,7 +19,7 @@ const ProductCategory = ({ title }) => {
           <div className="mt-2 font-semibold text-4xl">{title}</div>
         </div>
       </section>
-      <section id="featured-products" className="bg-white py-8">
+      <section id="featured-products" className="bg-whitepy-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Featured Category 1 */}
