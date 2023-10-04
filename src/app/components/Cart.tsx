@@ -20,52 +20,6 @@ const Cart = ({ cartItems }) => {
     return total + itemSubtotal;
   }, 0);
 
-  let shippingCharge = 0;
-
-  if (cartTotal >= 599) {
-    // Free shipping for cart total above 599
-    shippingCharge = 0;
-  } else {
-    // Fixed shipping charge for cart total below 599
-    shippingCharge = 40;
-  }
-
-  // Function to show a toast message when shipping is set to 0
-  const notifyFreeShipping = () => {
-    toast.success("Congratulations! You are eligible for free delivery. 🥳", {
-      position: "top-right",
-      autoClose: 3000, // Close the toast after 3 seconds
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
-  };
-
-  const notifyShipping = () => {
-    toast.success(
-      "You have to pay ₹40 for delivery. Please increase cart value to ₹599. 🙂",
-      {
-        position: "top-right",
-        autoClose: 3000, // Close the toast after 3 seconds
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        type: "error",
-      }
-    );
-  };
-  // Check if shipping becomes 0 and show a toast
-  useEffect(() => {
-    if (shippingCharge === 0) {
-      notifyFreeShipping();
-    }
-    if (shippingCharge != 0 && cart.length != 0) {
-      notifyShipping();
-    }
-  }, [shippingCharge]);
-
   const handleQuantityChange = (itemId: any, newQuantity: number) => {
     // Find the item in the cart and update its quantity
     updateCartItemQuantity(itemId, newQuantity);
