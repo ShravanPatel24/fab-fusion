@@ -10,7 +10,9 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
-            <h2 className="text-xl font-semibold mb-4">Fab Fusion</h2>
+            <Link href="/">
+              <h2 className="text-xl font-semibold mb-4">Fab Fusion</h2>
+            </Link>
             <p className="text-sm">Be More Stylish 😉</p>
           </div>
           <div>

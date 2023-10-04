@@ -19,12 +19,20 @@ const Header = () => {
         </p>
         <ul className="flex space-x-4">
           {isLoaded && isSignedIn ? (
-            <li className="border-red-500 border-2 rounded-full">
-              <UserButton />
-            </li>
+            <>
+              <Link
+                href="/auth/dashboard/address"
+                className="mt-1 mr-6 text-blue-500"
+              >
+                Manage Address
+              </Link>
+              <li className="border-red-500 border-2 rounded-full">
+                <UserButton />
+              </li>
+            </>
           ) : (
             <li>
-              <Link href="/sign-up">Sign In</Link>{" "}
+              <Link href="/auth/dashboard/sign-up">Sign In</Link>{" "}
             </li>
           )}
           {isLoaded && isSignedIn ? (

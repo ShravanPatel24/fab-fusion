@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductLoader from "./ProductLoader";
 
+import { FaArrowRight } from "react-icons/fa";
+
 interface Product {
   _id: string;
   images: string[];
@@ -40,7 +42,15 @@ function ProductSection({ title }) {
         </div>
       </div>
       <div className="container mx-auto">
-        <h2 className="mt-2 font-semibold text-4xl mb-12">{title}</h2>
+        <div className="flex justify-between">
+          <h2 className="mt-2 font-semibold text-4xl mb-12">{title}</h2>
+          <Link
+            href="/auth/dashboard/products"
+            className="text-2xl mt-4 text-red-500"
+          >
+            <FaArrowRight />
+          </Link>
+        </div>
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ProductLoader />

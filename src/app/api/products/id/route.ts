@@ -3,14 +3,16 @@
 import Product from "@/utils/model/Product";
 import connect from "@/utils/connections/db";
 import { NextResponse, NextRequest } from "next/server";
+import { currentUser } from "@clerk/nextjs";
 
 export const GET = async (request: NextRequest) => {
+  const user = await currentUser();
+  if (!user) {
+    return NextResponse.json("You are not logged in.");
+  }
   // Get the product ID from the params
   const { searchParams } = new URL(request.url)
   const id = searchParams.get('id')
-  
-
-  
 
   try {
     // Connect to the database

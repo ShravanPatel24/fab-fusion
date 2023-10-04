@@ -24,7 +24,7 @@ const Services = () => {
           </div>
           <p className="text-xl uppercase mt-6">Free and Fast Delivery</p>
           <p className="text-xs uppercase">
-            free delivery for all orders over ₹500{" "}
+            free delivery for all orders over ₹599{" "}
           </p>
         </div>
         <div className="relative text-center">

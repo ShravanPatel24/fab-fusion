@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaShoppingCart } from "react-icons/fa"; // Import cart icon from a library like react-icons
+import { MdShoppingCart } from "react-icons/md";
 import ProductLoader from "@/app/components/ProductLoader";
 import { CartItem, useCart } from "@/app/CartContext";
 
@@ -107,28 +107,30 @@ const ProductDetails = ({ params }) => {
               <p className="text-blue-600 font-semibold">
                 Price: ₹{posts.price}
               </p>
-              {addedToCart[posts._id] ? (
-                <>
-                  <button
-                    disabled
-                    className="bg-green-500 text-white rounded-full px-4 py-2 mt-2"
-                  >
-                    Added to Cart
-                  </button>
-                  <Link href="/auth/dashboard/cart">
-                    <button className="bg-blue-500 text-white rounded-full px-4 py-2 mt-2">
-                      Go to cart
+              <div className="flex flex-col sm:flex-row items-center">
+                {addedToCart[posts._id] ? (
+                  <>
+                    <button
+                      disabled
+                      className="bg-green-500 text-white rounded-full px-4 py-2 mt-2 sm:mt-0 sm:mr-4 opacity-70 cursor-not-allowed"
+                    >
+                      Added to Cart
                     </button>
-                  </Link>
-                </>
-              ) : (
-                <button
-                  className="bg-blue-500 text-white rounded-full px-4 py-2 mt-4 hover:bg-blue-600 transition duration-300 flex items-center"
-                  onClick={() => handleAddToCart(posts)}
-                >
-                  <FaShoppingCart className="mr-2" /> Add to Cart
-                </button>
-              )}
+                    <Link href="/auth/dashboard/cart">
+                      <button className="bg-blue-500 text-white rounded-full px-4 py-2 mt-2 sm:mt-0 hover:bg-blue-600 transition duration-300 flex items-center">
+                        <MdShoppingCart className="text-xl mr-2" /> Go to Cart
+                      </button>
+                    </Link>
+                  </>
+                ) : (
+                  <button
+                    className="bg-blue-500 text-white rounded-full px-4 py-2 mt-4 sm:mt-0 sm:mr-4 hover:bg-blue-600 transition duration-300 flex items-center"
+                    onClick={() => handleAddToCart(posts)}
+                  >
+                    <MdShoppingCart className="text-xl mr-2" /> Add to Cart
+                  </button>
+                )}
+              </div>
 
               <Link
                 href="/auth/dashboard/"
