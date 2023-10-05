@@ -9,9 +9,9 @@ const Header = () => {
   const { isLoaded, isSignedIn, user } = useUser();
 
   return (
-    <header className="bg-gray-900 text-white py-4 relative">
+    <header className="bg-gray-900 text-white py-6 relative">
       <nav className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-2xl font-bold">
           Fab Fusion
         </Link>
         <p className="hidden md:block">

@@ -5,7 +5,7 @@ import React from "react";
 const ProductCategory = ({ title }) => {
   return (
     <main>
-      <section className="mt-16">
+      <section className="mt-16 py-8">
         <div className="container mx-auto max-custom">
           <div className="flex items-center">
             <Image
@@ -16,7 +16,7 @@ const ProductCategory = ({ title }) => {
             />
             <p className="text-base text-red-500 ml-4">Categories</p>
           </div>
-          <div className="mt-2 font-semibold text-4xl">{title}</div>
+          <div className="mt-2 font-semibold text-3xl">{title}</div>
         </div>
       </section>
       <section id="featured-products" className="bg-whitepy-8">

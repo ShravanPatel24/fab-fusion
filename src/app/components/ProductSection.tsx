@@ -43,7 +43,7 @@ function ProductSection({ title }) {
       </div>
       <div className="container mx-auto">
         <div className="flex justify-between">
-          <h2 className="mt-2 font-semibold text-4xl mb-12">{title}</h2>
+          <h2 className="mt-2 font-semibold text-3xl mb-12">{title}</h2>
           <Link
             href="/auth/dashboard/products"
             className="text-2xl mt-4 text-red-500"
